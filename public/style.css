@@ -1,0 +1,225 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color: rgba(241, 122, 63, 0.763);
+}
+h1, h2, h3{
+  color: rgb(51, 98, 47);
+}
+/* 
+====================================================
+SIGNUP
+====================================================
+*/
+.loginSignUp{
+  margin-top: 1rem;
+}
+
+#signUpButton{
+  font-weight: bolder;
+}
+.signUpBtn{
+  color:rgb(51, 98, 47);
+}
+.logInBtn{
+  color:rgb(51, 98, 47);
+}
+/* 
+====================================================
+PROFILE PAGE
+====================================================
+*/
+.profileBackground{
+  background-image: url(img/toolsBackground.jpg);
+  background-size: cover;          
+  background-position: center center; 
+  background-repeat: no-repeat;    
+  background-attachment: fixed;   
+} 
+.page-header{
+  background-color: white;
+  padding-top: 1.2rem ;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+div h1{
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  border-radius: 20px 50px 20px 40px / 40px 20px 50px 20px; /* googled 'funky border-radius' for this*/
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: "Abril Fatface", Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+}
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title a{
+  background-color:rgba(51, 98, 47, 0.414);
+  font-weight: 500;
+}
+.mainSection{ /*I googled how to get a 'blurry look' for the background*/
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+}
+/* 
+====================================================
+LEFT SECTION OF PROFILE
+====================================================
+*/
+.leftSection{
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.btnNewItem{
+  display: block;
+  background-color: rgba(91, 145, 85, 0.414);;
+  margin-top: 0.8rem;
+}
+h2{
+  font-size: 3rem;
+  padding-top: 2rem;
+  font-family: 'Oleo Script Swash Caps', Arial, Helvetica, sans-serif;
+}
+.returnContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+.labelSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+/* 
+====================================================
+RIGHT SECTION OF PROFILE
+====================================================
+*/
+
+/* I got parts of the following span/card code from googling */
+.tools {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /*this css styling 'creates a responsive, multi-column grid layout without media queries' */
+  gap: 1.25rem;
+}
+
+/* EACH CARD */
+.tool {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: rgba(91, 145, 85, 0.414);
+  border: 1px solid #e3e6ea;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04),
+              0 4px 12px rgba(16, 24, 40, 0.06);
+  text-align: left;
+}
+.tool:hover {
+  transform: translateY(-2px); /*new fave*/
+}
+span{
+  font-size: 1.2rem;
+}
+.spanParent1,
+.spanParent2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4;
+}
+/* Divider in between two info blocks */
+.spanParent2 {
+  padding-top: 0.75rem;
+  border-top: 1px solid #eef0f3;
+}
+
+/* BOLD the first span here */
+.spanParent1 span:first-child {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #101828;
+  margin-bottom: 0.25rem;
+}
+
+/* Action row pinned to the bottom */
+.spanParent3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #eef0f3;
+}
+.spanParent3 > a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(17, 17, 132);
+  text-decoration: none;
+  background-color:rgba(51, 98, 47, 0.414);
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #102465;
+}
+
+.spanParent3 a:hover {
+  text-decoration: underline;
+}
+
+.spanParent3 .remove {
+  margin-left: auto;
+  padding: 0.4rem 0.75rem;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: #b42318;
+  background: #fef3f2;
+  border: 1px solid #fecdca;
+}
+
+.spanParent3 .remove:hover {
+  background: #fee4e2;
+}
+/* Adding tool items items */
+
+.customLine{
+  border: none;              
+  border-top: 2px solid #333; 
+  width: 100%;                
+  margin: 20px 0;
+}
+form{
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btnNewItem{
+  padding: 0.4rem 0.75rem;
+  font-weight: bolder;
+  color: rgb(51, 98, 47);
+  background: rgba(91, 145, 85, 0.414);;
+  border: 1px solid #0b5040;
+}
+.oneList{
+  text-decoration: none;
+}

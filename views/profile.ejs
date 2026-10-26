@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Tool Lending Library</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caacupe+One&family=Carter+One&family=Cookie&family=Dancing+Script:wght@400..700&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Honk:MORF@15&family=Isometra&family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oleo+Script+Swash+Caps:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Permanent+Marker&family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Titan+One&family=Unkempt:wght@400;700&family=Zen+Dots&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="profileBackground">
+    <div class="container">
+        <div class="title">
+            <h1>Your Friendly Neighborhood Tool Lending Library</h1>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+        </div>
+        <section class="mainSection">
+            <section class="leftSection">
+                <h2>Add a tool to the library</h2>
+                <form action="/tools" method="POST">
+                    <label for="name">Tool name: </label>
+                    <input type="text" placeholder="vacuum" name="name">
+                    <label for="borrower">Borrower: </label>
+                    <input type="text" placeholder="enter name" name="borrower">
+                    <label for="description">Description: </label>
+                    <textarea name="description" rows="6" cols="20"
+                        placeholder="old drill, still in good use"></textarea>
+                    <section class="returnContainer">
+                        <label for="returnDate">Return Date: </label>
+                        <input type="date" name="returnDate">
+                    </section>
+                    <section class="labelSection">
+                        <label for="status">Status: </label>
+                        <select name="status" id="status-types">
+                            <option value="available">Available</option>
+                            <option value="in use">In Use</option>
+                        </select>
+                    </section>
+                    <button class="btnNewItem" type="submit">Submit</button>
+                </form>
+            </section>
+
+            <!-- LOCAL INFORMATION -->
+            <section class="rightSection">
+                <h2>Current Inventory</h2>
+                <ul class="tools">
+                    <% for(let i=0; i<tools.length; i++) {%>
+                        <li class="tool">
+                            <section class="spanParent1">
+                                <span data-tool-id="<%= tools[i]._id %>">Tool name: <%= tools[i].name %></span>
+                                <span>Lender: <%= tools[i].lender %></span>
+                                <span>Borrower: <%= tools[i].borrower %></span>
+                                <span>Description: <%= tools[i].description %> </span>
+                            </section>
+                            <section class="spanParent2">
+                                <span>Return Date: <%= tools[i].displayDate %></span>
+                                <span>Status: <%= tools[i].status %></span>
+                            </section>
+                            <section class="spanParent3">
+                                <a class="borrowNow" href="/tool/<%= tools[i]._id %>">Borrow</a>
+                                <button data-tool-id="<%= tools[i]._id %>" class="remove">Remove from library</button>
+                            </section>
+
+                        </li>
+                        <% } %>
+                </ul>
+                <hr class="customLine">
+            </section>
+        </section>
+
+
+
+    </div>
+
+    <script src="/main.js"></script>
+
+</body>
+
+</html>

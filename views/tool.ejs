@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>Tool Lending Library</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-sign-in"></span> Found something you need?</h1>
+    <p>Update the form below: </p>
+    <ul>
+        <li class="oneList">
+            <label for="borrower">Borrower</label>
+            <input type= "text" id="toolBorrow" value="<%= tool.borrower%>" name="borrower"> 
+            <label for="returnDate">Return Date</label>
+            <input type="date" id="date" name="returnDate">
+            <button data-tool-id="<%= tool._id%>"class="save">Save Edits</button>
+        </li>
+    </ul>
+</div>
+</div>
+<script src="/tool.js"></script>
+</body>
+</html>
