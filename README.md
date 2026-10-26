@@ -26,4 +26,4 @@ Your friendly neighborhood tool library!
 - Authentication: passport, bcrypt
 
 ### How to run project: 
-- Live link coming soon!
+- Website deployed at: https://toolshare-q1hy.onrender.com/signup 
